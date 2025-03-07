@@ -55,7 +55,7 @@
     // https://github.com/tensorflow/tfjs-models/tree/master/speech-commands
 
     // the link to your model provided by Teachable Machine export panel
-    const URL = "./my_model/";
+    const URL ="https://automatic-bassoon-wrgxpqq6rpxx39gwr-3000.app.github.dev/my_model/";
 
     async function createModel() {
         const checkpointURL = URL + "model.json"; // model topology
@@ -90,6 +90,7 @@
             for (let i = 0; i < classLabels.length; i++) {
                 const classPrediction = classLabels[i] + ": " + result.scores[i].toFixed(2);
                 labelContainer.childNodes[i].innerHTML = classPrediction;
+                console.log(classPrediction);
             }
         }, {
             includeSpectrogram: true, // in case listen should return result.spectrogram
